@@ -2,16 +2,18 @@ const svgObject = document.getElementById("svg-map");
 
 svgObject.addEventListener("load", function () {
 
-    const svg = svgObject.contentDocument;
+    const doc = svgObject.contentDocument;
 
-    console.log("SVG:", svg);
+    console.log("=== DOCUMENT ===");
+    console.log(doc);
 
-    const all = svg.querySelectorAll("[id]");
+    console.log("=== documentElement ===");
+    console.log(doc.documentElement);
 
-    console.log("Количество элементов с id:", all.length);
+    console.log("=== body ===");
+    console.log(doc.body);
 
-    all.forEach(el => {
-        console.log(el.id);
-    });
+    console.log("=== SVG ===");
+    console.log(doc.querySelector("svg"));
 
 });
