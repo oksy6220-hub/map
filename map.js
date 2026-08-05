@@ -1,8 +1,8 @@
 const svgObject = document.getElementById("svg-map");
 
-const region = svg.getElementById("moscow");
+const svg = svgObject.contentDocument;
 
-console.log(region);
+console.log(svg.documentElement);
 
 svgObject.addEventListener("load", function () {
 
