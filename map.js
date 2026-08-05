@@ -1,21 +1,17 @@
 const svgObject = document.getElementById("svg-map");
 
-const svg = svgObject.contentDocument;
-
-console.log(svg.documentElement);
-
-const elements = svg.querySelectorAll("[id]");
-
-elements.forEach(el => {
-    console.log(el.id);
-});
-
 svgObject.addEventListener("load", function () {
-
-    console.log("SVG загружен!");
 
     const svg = svgObject.contentDocument;
 
-    console.log(svg);
+    console.log("SVG:", svg);
+
+    const all = svg.querySelectorAll("[id]");
+
+    console.log("Количество элементов с id:", all.length);
+
+    all.forEach(el => {
+        console.log(el.id);
+    });
 
 });
