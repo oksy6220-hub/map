@@ -1,18 +1,24 @@
-// Ждем загрузки SVG-карты
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
 
-    const object = document.getElementById("svg-map");
+    const mapObject = document.getElementById("svg-map");
 
-    object.addEventListener("load", () => {
+    if (!mapObject) {
+        console.log("Объект карты не найден");
+        return;
+    }
 
-        const svg = object.contentDocument;
+    mapObject.addEventListener("load", function () {
 
-        if (!svg) {
-            console.error("SVG не найден");
+        console.log("SVG загружен");
+
+        const svgDoc = mapObject.contentDocument;
+
+        if (!svgDoc) {
+            console.log("Не удалось получить SVG");
             return;
         }
 
-        console.log("SVG успешно загружен");
+        console.log("SVG успешно открыт");
 
     });
 
