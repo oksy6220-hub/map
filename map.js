@@ -4,12 +4,6 @@ svgObject.addEventListener("load", function () {
 
     const doc = svgObject.contentDocument;
 
-    const svg = doc.querySelector("svg");
-
-    console.log("SVG элемент:", svg);
-
-    const region = svg.querySelector("#moscow");
-
-    console.log("Москва:", region);
+    console.log(doc.querySelector("#moscow"));
 
 });
