@@ -1,1 +1,44 @@
-1
+/* ==========================
+   SVG карта
+========================== */
+
+#svg-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================
+   Все регионы
+========================== */
+
+path[id] {
+    cursor: pointer;
+    transition: fill 0.25s ease, fill-opacity 0.25s ease;
+}
+
+/* ==========================
+   Активный регион
+========================== */
+
+.region-active {
+    fill: #4F4F4F !important;
+    fill-opacity: 1 !important;
+}
+
+/* ==========================
+   Все точки
+========================== */
+
+circle[id^="point-"] {
+    transition: fill 0.25s ease;
+}
+
+/* ==========================
+   Активная точка
+========================== */
+
+.point-active {
+    fill: white !important;
+    fill-opacity: 1 !important;
+}
