@@ -1,15 +1,20 @@
-const svgObject = document.getElementById("svg-map");
+document.addEventListener("DOMContentLoaded", async () => {
+    const container = document.getElementById("svg-map");
 
-svgObject.addEventListener("load", () => {
+    try {
+        const response = await fetch("https://oksy6220-hub.github.io/map/LASTMAP.svg");
 
-    const doc = svgObject.contentDocument;
+        if (!response.ok) {
+            throw new Error(`Ошибка загрузки SVG: ${response.status}`);
+        }
 
-    console.log("=== Проверка ===");
+        const svgText = await response.text();
 
-    console.log("getElementById:", doc.getElementById("moscow"));
+        container.innerHTML = svgText;
 
-    console.log("querySelector:", doc.querySelector("#moscow"));
+        console.log("✅ SVG успешно вставлен в страницу");
 
-    console.log("Все path:", doc.querySelectorAll("path").length);
-
+    } catch (error) {
+        console.error("Ошибка:", error);
+    }
 });
