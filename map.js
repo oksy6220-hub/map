@@ -19,3 +19,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+window.addEventListener("load", () => {
+
+    const object = document.getElementById("svg-map");
+
+    object.addEventListener("load", () => {
+
+        const svg = object.contentDocument;
+
+        svg.querySelectorAll("path").forEach((path, index) => {
+
+            path.style.cursor = "pointer";
+
+            path.addEventListener("click", () => {
+
+                console.log(index);
+
+                console.log(path);
+
+            });
+
+        });
+
+    });
+
+});
